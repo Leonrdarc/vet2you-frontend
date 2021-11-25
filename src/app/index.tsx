@@ -20,11 +20,7 @@ export function App() {
   const { i18n } = useTranslation();
   return (
     <BrowserRouter>
-      <Helmet
-        titleTemplate="%s - React Boilerplate"
-        defaultTitle="React Boilerplate"
-        htmlAttributes={{ lang: i18n.language }}
-      >
+      <Helmet htmlAttributes={{ lang: i18n.language }}>
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
 

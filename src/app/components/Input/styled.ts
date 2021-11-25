@@ -1,0 +1,11 @@
+import styled from 'styled-components';
+
+export const InputStyled = styled.input`
+  width: 100%;
+  font-family: 'Roboto';
+  font-size: 22px;
+  padding: 21px 28px;
+  border-radius: 10px;
+  border: 1px solid #a4a4a4;
+  background-color: #f3f3f3;
+`;
