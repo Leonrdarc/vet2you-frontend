@@ -20,7 +20,6 @@ export function Map() {
       width="100%"
       height="100%"
       mapStyle="mapbox://styles/leonrdarc/ckwev1be01ql914pcsueqo6qz"
-      mapboxApiAccessToken="pk.eyJ1IjoibGVvbnJkYXJjIiwiYSI6ImNrd2V0c3k4cTA4N3AzMHFqZTJxcmxwMXMifQ.jHbunGjDY_vKZi8GR0ApGw"
       onViewportChange={viewport => setViewport(viewport)}
     >
       <Marker
