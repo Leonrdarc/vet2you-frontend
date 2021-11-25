@@ -7,9 +7,7 @@ import * as React from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import { ReactComponent as MarkerIcon } from '../../assets/icons/marker_map.svg';
 
-interface Props {}
-
-export function Map({}: Props) {
+export function Map() {
   const [viewport, setViewport] = React.useState({
     latitude: 10.94,
     longitude: -74.8,
@@ -23,10 +21,7 @@ export function Map({}: Props) {
       height="100%"
       mapStyle="mapbox://styles/leonrdarc/ckwev1be01ql914pcsueqo6qz"
       mapboxApiAccessToken="pk.eyJ1IjoibGVvbnJkYXJjIiwiYSI6ImNrd2V0c3k4cTA4N3AzMHFqZTJxcmxwMXMifQ.jHbunGjDY_vKZi8GR0ApGw"
-      onViewportChange={viewport => {
-        setViewport(viewport);
-        console.log(viewport);
-      }}
+      onViewportChange={viewport => setViewport(viewport)}
     >
       <Marker
         offsetLeft={-20}
