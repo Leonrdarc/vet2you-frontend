@@ -15,6 +15,7 @@ import { GlobalStyle } from 'styles/global-styles';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
+import { NavBar } from './components/NavBar';
 
 export function App() {
   const { i18n } = useTranslation();
@@ -23,7 +24,7 @@ export function App() {
       <Helmet htmlAttributes={{ lang: i18n.language }}>
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-
+      <NavBar />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route component={NotFoundPage} />
