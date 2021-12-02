@@ -23,7 +23,7 @@ export function NavBar() {
       <NavLinksContainer>
         <NavLink to="/">Solicitar</NavLink>
         <NavLink to="#servicios">Servicios</NavLink>
-        <NavLink to="/">Rastrea tu solicitud</NavLink>
+        <NavLink to="/tracker">Rastrea tu solicitud</NavLink>
       </NavLinksContainer>
     </NavBarContainer>
   );

@@ -13,6 +13,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from 'styles/global-styles';
 
 import { HomePage } from './pages/HomePage/Loadable';
+import { Tracker } from './pages/Tracker/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
 import { NavBar } from './components/NavBar';
@@ -27,6 +28,7 @@ export function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/tracker" component={Tracker} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
