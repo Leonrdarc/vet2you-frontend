@@ -68,7 +68,7 @@ export function TrackerDetails(props: TrackerProps) {
             )}
             <StateValue>{props.state}</StateValue>
           </StateContainer>
-          {props.state === ServiceState.PENDING && (
+          {props.state === ServiceState.COMPLETED && (
             <Button>
               <RouterLink to={`${url}/review`}>Reseñar el servicio</RouterLink>
             </Button>
