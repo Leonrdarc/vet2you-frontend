@@ -37,7 +37,7 @@ export function TrackerMap(props: Props) {
     () => {
       setCounter(counter + 1);
     },
-    counter < geojson.features.length - 2 ? 300 : null,
+    counter < geojson.features.length - 2 ? 500 : null,
   );
 
   const updateRoute = counter => {
