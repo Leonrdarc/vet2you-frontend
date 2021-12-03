@@ -61,7 +61,9 @@ export const StateValue = styled.h2`
   font-weight: 400;
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  height: 65px;
+`;
 
 export const RouterLink = styled(NavLink)`
   color: #fff;

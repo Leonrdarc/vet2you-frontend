@@ -15,11 +15,13 @@ import {
 
 import Check from 'app/assets/green-check.png';
 import Clock from 'app/assets/clock.png';
+import Van from 'app/assets/van.png';
 import { Button } from '../Button';
 import { useRouteMatch } from 'react-router';
 
 export enum ServiceState {
   PENDING = 'Pendiente de Confirmación',
+  ONWAY = 'En camino',
   COMPLETED = 'Servicio completado',
 }
 
@@ -63,15 +65,17 @@ export function TrackerDetails(props: TrackerProps) {
           <StateContainer>
             {props.state === ServiceState.COMPLETED ? (
               <Image src={Check} />
+            ) : props.state === ServiceState.ONWAY ? (
+              <Image style={{ padding: '8px 0' }} src={Van} />
             ) : (
               <Image src={Clock} />
             )}
             <StateValue>{props.state}</StateValue>
           </StateContainer>
           {props.state === ServiceState.COMPLETED && (
-            <Button>
-              <RouterLink to={`${url}/review`}>Reseñar el servicio</RouterLink>
-            </Button>
+            <RouterLink to={`${url}/review`}>
+              <Button>Reseñar el servicio</Button>
+            </RouterLink>
           )}
         </DetailsContainer>
       </Column>

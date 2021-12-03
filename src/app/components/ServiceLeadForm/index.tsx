@@ -11,8 +11,7 @@ import { Map } from '../Map';
 // Styles
 import { Title } from 'styles/shared-styles';
 import { FormContainer, InputCol, InputRow } from './styled';
-
-interface Props {}
+import { RouterLink } from '../TrackerDetails/styled';
 
 export function ServiceLeadForm() {
   return (
@@ -29,7 +28,9 @@ export function ServiceLeadForm() {
         <InputCol>
           <Input placeholder="Dirección" />
           <Map />
-          <Button>Solicitar servicio</Button>
+          <RouterLink to="/tracker">
+            <Button>Solicitar servicio</Button>
+          </RouterLink>
         </InputCol>
       </InputRow>
     </FormContainer>

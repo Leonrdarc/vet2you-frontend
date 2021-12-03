@@ -5,6 +5,7 @@ export interface ButtonProps {
 }
 
 export const ButtonStyled = styled.button<ButtonProps>`
+  cursor: pointer;
   padding: 20px 40px;
   font-family: 'Pangolin';
   font-size: 22px;

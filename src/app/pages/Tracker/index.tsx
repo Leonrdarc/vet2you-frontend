@@ -6,28 +6,27 @@
 import { Button } from 'app/components/Button';
 import { TextArea } from 'app/components/Input';
 import { LandingContainer } from 'app/components/LandingBanner/styled';
-import { Map } from 'app/components/Map';
 import { ServiceState, TrackerDetails } from 'app/components/TrackerDetails';
-import { Container } from 'app/components/TrackerDetails/styled';
+import { Container, RouterLink } from 'app/components/TrackerDetails/styled';
 import React, { useState } from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router';
 import { Title } from 'styles/shared-styles';
 import { TrackerContainer, Title as PageTitle, Column } from './styled';
 import StarRatings from 'react-star-ratings';
+import { TrackerMap } from 'app/components/TrackerMap';
 
-interface Props {}
-
-export function Tracker(props: Props) {
+export function Tracker() {
   const { path } = useRouteMatch();
 
   const [rating, setRating] = useState<number>(0);
+  const [cState, setCState] = useState(ServiceState.PENDING);
 
   return (
     <React.Fragment>
       <LandingContainer>
         <TrackerContainer>
           <PageTitle>Rastrea tu solicitud</PageTitle>
-          <Map />
+          <TrackerMap setState={setCState} />
         </TrackerContainer>
       </LandingContainer>
       <Switch>
@@ -37,7 +36,7 @@ export function Tracker(props: Props) {
             pet="Perro"
             service="Consulta Veterinaria"
             phone="3013194342"
-            state={ServiceState.PENDING}
+            state={cState}
           />
         </Route>
         <Route exact path={`${path}/review`}>
@@ -52,7 +51,9 @@ export function Tracker(props: Props) {
                 name="rating"
               />
               <TextArea placeholder="Deja tu comentario" maxLength={144} />
-              <Button block>Reseñar el servicio</Button>
+              <RouterLink to={'/'}>
+                <Button block>Reseñar el servicio</Button>
+              </RouterLink>
             </Column>
           </Container>
         </Route>
