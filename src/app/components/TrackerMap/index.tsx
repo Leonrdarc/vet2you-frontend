@@ -25,9 +25,9 @@ interface Props {
 
 export function TrackerMap(props: Props) {
   const [viewport, setViewport] = useState({
-    latitude: 10.94,
-    longitude: -74.8,
-    zoom: 9.5,
+    latitude: 10.984822140635044,
+    longitude: -74.8097293118852,
+    zoom: 13.478885568658248,
   });
   const [counter, setCounter] = useState(0);
 
@@ -63,7 +63,10 @@ export function TrackerMap(props: Props) {
       width="100%"
       height="100%"
       mapStyle="mapbox://styles/leonrdarc/ckwev1be01ql914pcsueqo6qz"
-      onViewportChange={viewport => setViewport(viewport)}
+      onViewportChange={viewport => {
+        setViewport(viewport);
+        console.log(viewport);
+      }}
     >
       <Source id="my-data" type="geojson" data={data}>
         <Layer
