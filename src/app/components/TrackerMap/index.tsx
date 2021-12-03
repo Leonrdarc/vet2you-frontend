@@ -3,7 +3,7 @@
  * TrackerMap
  *
  */
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import ReactMapGL, { Layer, Marker, Source } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
@@ -54,7 +54,7 @@ export function TrackerMap(props: Props) {
     }
     return newGeoJson;
   };
-
+  // eslint-disable-next-line
   const data = useMemo(() => updateRoute(counter), [counter]);
 
   return (
